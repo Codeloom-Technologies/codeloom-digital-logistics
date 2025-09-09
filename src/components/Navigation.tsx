@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Code, Truck } from "lucide-react";
+import { Menu, X, Code, Bike } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,7 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Home", path: "/", icon: Code },
-    { name: "LoomDash", path: "/loomdash", icon: Truck },
+    { name: "LoomDash", path: "/loomdash", icon: Bike },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
@@ -59,9 +59,14 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex">
-            <Button variant="default" className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
-              Get Started
-            </Button>
+            <Link to="/services">
+              <Button
+                variant="default"
+                className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
+              >
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -72,7 +77,11 @@ const Navigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-foreground"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -100,7 +109,10 @@ const Navigation = () => {
                 );
               })}
               <div className="pt-2">
-                <Button variant="default" className="w-full bg-gradient-primary">
+                <Button
+                  variant="default"
+                  className="w-full bg-gradient-primary"
+                >
                   Get Started
                 </Button>
               </div>

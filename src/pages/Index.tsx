@@ -1,16 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Code, 
-  Rocket, 
-  Shield, 
-  Truck, 
-  ArrowRight, 
-  CheckCircle,
+import {
+  Code,
+  Rocket,
+  Shield,
+  Truck,
+  ArrowRight,
+  Brain,
   Smartphone,
   Globe,
-  Zap
+  Zap,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-codeloom.jpg";
@@ -20,25 +20,38 @@ const Index = () => {
     {
       icon: Code,
       title: "Software Development",
-      description: "Custom applications, platforms, and tools that solve real-world challenges."
+      description:
+        "Custom applications, platforms, and tools that solve real-world challenges.",
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile App Development",
+      description: "Cross-platform apps that solve real-world problems.",
     },
     {
       icon: Globe,
       title: "Digital Transformation",
-      description: "Helping businesses embrace modern technologies to boost efficiency and growth."
+      description:
+        "Helping businesses embrace modern technologies to boost efficiency and growth.",
     },
     {
       icon: Zap,
       title: "Tech-Enabled Services",
-      description: "Extending beyond pure software into smart, technology-powered operations."
-    }
+      description:
+        "Extending beyond pure software into smart, technology-powered operations.",
+    },
+    {
+      icon: Brain,
+      title: "Machine Learning",
+      description: "Turning data into decisions",
+    },
   ];
 
   const achievements = [
-    { number: "50+", label: "Projects Delivered" },
+    { number: "10+", label: "Projects Delivered" },
     { number: "25+", label: "Happy Clients" },
-    { number: "100%", label: "Client Satisfaction" },
-    { number: "24/7", label: "Support Available" }
+    { number: "99%", label: "Client Satisfaction" },
+    { number: "24/7", label: "Support Available" },
   ];
 
   return (
@@ -46,13 +59,16 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-hero">
         <div className="absolute inset-0 bg-black/10"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
           style={{ backgroundImage: `url(${heroImage})` }}
         ></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <div className="max-w-4xl">
-            <Badge variant="secondary" className="mb-6 bg-white/10 text-white border-white/20">
+            <Badge
+              variant="secondary"
+              className="mb-6 bg-white/10 text-white border-white/20"
+            >
               Innovative Digital Solutions
             </Badge>
             <h1 className="text-4xl lg:text-7xl font-bold text-white mb-6 leading-tight">
@@ -62,17 +78,24 @@ const Index = () => {
               </span>
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl">
-              We weave technology seamlessly into the way people live, work, and move — 
-              delivering products and services that are smart, efficient, and impactful.
+              We weave technology seamlessly into the way people live, work, and
+              move — delivering products and services that are smart, efficient,
+              and impactful.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" className="text-lg px-8 shadow-glow">
-                Explore Solutions <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <Link to="/services">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="text-lg px-8 shadow-glow"
+                >
+                  Explore Solutions <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
               <Link to="/loomdash">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="text-white border-white/30 hover:bg-white/10 text-lg px-8 w-full sm:w-auto"
                 >
                   <Truck className="mr-2 w-5 h-5" />
@@ -88,15 +111,19 @@ const Index = () => {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="secondary" className="mb-4 bg-gradient-primary text-white border-0">
+            <Badge
+              variant="secondary"
+              className="mb-4 bg-gradient-primary text-white border-0"
+            >
               Founded 2023 • Est. September 13, 2022
             </Badge>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
               About Codeloom Technologies
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              A forward-thinking startup at the forefront of software development and machine learning, 
-              dedicated to crafting intricate and precise solutions for today's complex tech landscape.
+              A forward-thinking startup at the forefront of software
+              development and machine learning, dedicated to crafting intricate
+              and precise solutions for today's complex tech landscape.
             </p>
           </div>
 
@@ -107,11 +134,15 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center mb-6 group-hover:shadow-glow transition-all duration-300">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">The Challenge</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  The Challenge
+                </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  In today's tech-driven landscape, businesses face the daunting challenge of navigating 
-                  a complex and rapidly evolving technological environment. The scarcity of tailor-made, 
-                  precise solutions that align with individual business needs hinders growth and innovation.
+                  In today's tech-driven landscape, businesses face the daunting
+                  challenge of navigating a complex and rapidly evolving
+                  technological environment. The scarcity of tailor-made,
+                  precise solutions that align with individual business needs
+                  hinders growth and innovation.
                 </p>
               </CardContent>
             </Card>
@@ -121,11 +152,15 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-6 group-hover:shadow-glow transition-all duration-300">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">Our Solution</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Our Solution
+                </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We address these challenges with cutting-edge software development and machine learning solutions. 
-                  Our team crafts intricate, custom-tailored technological solutions that empower businesses 
-                  to not only adapt but thrive in the digital landscape.
+                  We address these challenges with cutting-edge software
+                  development and machine learning solutions. Our team crafts
+                  intricate, custom-tailored technological solutions that
+                  empower businesses to not only adapt but thrive in the digital
+                  landscape.
                 </p>
               </CardContent>
             </Card>
@@ -137,10 +172,13 @@ const Index = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mb-6">
                 <Rocket className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Our Vision
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                To be a leading innovator in software development and machine learning, empowering businesses 
-                with cutting-edge solutions that redefine possibilities and drive digital transformation.
+                To be a leading innovator in software development and machine
+                learning, empowering businesses with cutting-edge solutions that
+                redefine possibilities and drive digital transformation.
               </p>
             </div>
 
@@ -148,57 +186,73 @@ const Index = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6">
                 <Code className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Our Mission
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                To deliver unparalleled value by leveraging the latest technologies and a blend of coding 
-                expertise and creative craftsmanship, pushing the boundaries of innovation with tailored solutions.
+                To deliver unparalleled value by leveraging the latest
+                technologies and a blend of coding expertise and creative
+                craftsmanship, pushing the boundaries of innovation with
+                tailored solutions.
               </p>
             </div>
           </div>
 
           {/* Values */}
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-foreground mb-8">Our Core Values</h3>
+            <h3 className="text-3xl font-bold text-foreground mb-8">
+              Our Core Values
+            </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
-                { 
-                  icon: "💡", 
-                  title: "Innovation", 
-                  description: "Embrace creativity and technological advancements",
-                  gradient: "from-yellow-400 to-orange-500"
+                {
+                  icon: "💡",
+                  title: "Innovation",
+                  description:
+                    "Embrace creativity and technological advancements",
+                  gradient: "from-yellow-400 to-orange-500",
                 },
-                { 
-                  icon: "🎯", 
-                  title: "Precision", 
+                {
+                  icon: "🎯",
+                  title: "Precision",
                   description: "Strive for excellence in every detail",
-                  gradient: "from-blue-400 to-blue-600"
+                  gradient: "from-blue-400 to-blue-600",
                 },
-                { 
-                  icon: "🤝", 
-                  title: "Collaboration", 
+                {
+                  icon: "🤝",
+                  title: "Collaboration",
                   description: "Foster teamwork and diverse skills",
-                  gradient: "from-green-400 to-emerald-500"
+                  gradient: "from-green-400 to-emerald-500",
                 },
-                { 
-                  icon: "❤️", 
-                  title: "Client-Centric", 
+                {
+                  icon: "❤️",
+                  title: "Client-Centric",
                   description: "Prioritize satisfaction through understanding",
-                  gradient: "from-pink-400 to-rose-500"
+                  gradient: "from-pink-400 to-rose-500",
                 },
-                { 
-                  icon: "📚", 
-                  title: "Learning", 
+                {
+                  icon: "📚",
+                  title: "Learning",
                   description: "Cultivate growth and industry leadership",
-                  gradient: "from-purple-400 to-indigo-500"
-                }
+                  gradient: "from-purple-400 to-indigo-500",
+                },
               ].map((value, index) => (
-                <Card key={index} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 border-0 bg-card/50 backdrop-blur-sm">
+                <Card
+                  key={index}
+                  className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 border-0 bg-card/50 backdrop-blur-sm"
+                >
                   <CardContent className="p-6 text-center">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${value.gradient} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-300 text-2xl`}>
+                    <div
+                      className={`w-16 h-16 bg-gradient-to-br ${value.gradient} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-300 text-2xl`}
+                    >
                       {value.icon}
                     </div>
-                    <h4 className="font-semibold text-foreground mb-2">{value.title}</h4>
-                    <p className="text-sm text-muted-foreground">{value.description}</p>
+                    <h4 className="font-semibold text-foreground mb-2">
+                      {value.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      {value.description}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -208,7 +262,10 @@ const Index = () => {
           {/* Achievements */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {achievements.map((achievement, index) => (
-              <Card key={index} className="text-center hover:shadow-card transition-all duration-300 border-0 bg-gradient-to-br from-primary/5 to-primary/10">
+              <Card
+                key={index}
+                className="text-center hover:shadow-card transition-all duration-300 border-0 bg-gradient-to-br from-primary/5 to-primary/10"
+              >
                 <CardContent className="p-6">
                   <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
                     {achievement.number}
@@ -231,17 +288,17 @@ const Index = () => {
               What We Do
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We provide technology-driven solutions across multiple sectors, with a focus 
-              on innovation, reliability, and customer value.
+              We provide technology-driven solutions across multiple sectors,
+              with a focus on innovation, reliability, and customer value.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 border-0 bg-card/50 backdrop-blur-sm"
                 >
                   <CardContent className="p-8 text-center">
@@ -268,27 +325,35 @@ const Index = () => {
           <div className="bg-gradient-accent rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-black/10 rounded-2xl"></div>
             <div className="relative">
-              <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
+              <Badge
+                variant="secondary"
+                className="mb-6 bg-white/20 text-white border-white/30"
+              >
                 Our Subsidiary Service
               </Badge>
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                 Meet LoomDash
               </h2>
               <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-                As part of our drive to merge tech with real-world needs, we launched LoomDash, 
-                a dispatch and last-mile delivery service. Powered by Codeloom's innovation, 
-                LoomDash brings speed, reliability, and smart logistics to businesses and individuals.
+                As part of our drive to merge tech with real-world needs, we
+                launched LoomDash, a dispatch and last-mile delivery service.
+                Powered by Codeloom's innovation, LoomDash brings speed,
+                reliability, and smart logistics to businesses and individuals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/loomdash">
-                  <Button size="lg" variant="secondary" className="text-lg px-8">
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="text-lg px-8"
+                  >
                     <Truck className="mr-2 w-5 h-5" />
                     Explore LoomDash
                   </Button>
                 </Link>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="text-white border-white/30 hover:bg-white/10 text-lg px-8"
                 >
                   Request Service
@@ -306,8 +371,9 @@ const Index = () => {
             Our Vision
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            To become a leading African technology company that inspires trust, drives progress, 
-            and connects people through innovative digital and logistics solutions.
+            To become a leading African technology company that inspires trust,
+            drives progress, and connects people through innovative digital and
+            logistics solutions.
           </p>
         </div>
       </section>
@@ -320,20 +386,24 @@ const Index = () => {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Let's work together to bring innovative technology solutions to your business. 
-            Contact us today to get started.
+            Let's work together to bring innovative technology solutions to your
+            business. Contact us today to get started.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8">
-              Get Started Today
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-white border-white/30 hover:bg-white/10 text-lg px-8"
-            >
-              Learn More
-            </Button>
+            <Link to="/services">
+              <Button size="lg" variant="secondary" className="text-lg px-8">
+                Get Started Today
+              </Button>
+            </Link>
+            <Link to="/about">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-white border-white/30 hover:bg-white/10 text-lg px-8"
+              >
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

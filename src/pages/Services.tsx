@@ -1,120 +1,134 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  Code, 
-  Globe, 
-  Zap, 
-  Brain, 
-  Database, 
-  Smartphone, 
-  Cloud, 
-  Shield, 
-  Cog, 
+import {
+  Code,
+  Globe,
+  Zap,
+  Brain,
+  Database,
+  Smartphone,
+  Cloud,
+  Shield,
+  Cog,
   ArrowRight,
-  CheckCircle 
+  CheckCircle,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const mainServices = [
     {
       icon: Code,
       title: "Software Development",
-      description: "Custom applications, platforms, and tools that solve real-world challenges with precision and innovation.",
+      description:
+        "Custom applications, platforms, and tools that solve real-world challenges with precision and innovation.",
       features: [
         "Web Applications & Platforms",
-        "Mobile App Development", 
+        "Mobile App Development",
         "Desktop Software Solutions",
-        "API Development & Integration"
+        "API Development & Integration",
       ],
-      gradient: "from-blue-500 to-indigo-500"
+      gradient: "from-blue-500 to-indigo-500",
     },
     {
       icon: Globe,
       title: "Digital Transformation",
-      description: "Helping businesses embrace modern technologies to boost efficiency, growth, and competitive advantage.",
+      description:
+        "Helping businesses embrace modern technologies to boost efficiency, growth, and competitive advantage.",
       features: [
         "Legacy System Modernization",
         "Cloud Migration & Strategy",
         "Process Automation",
-        "Digital Strategy Consulting"
+        "Digital Strategy Consulting",
       ],
-      gradient: "from-green-500 to-emerald-500"
+      gradient: "from-green-500 to-emerald-500",
     },
     {
       icon: Zap,
       title: "Tech-Enabled Services",
-      description: "Extending beyond pure software into smart, technology-powered operations and innovative solutions.",
+      description:
+        "Extending beyond pure software into smart, technology-powered operations and innovative solutions.",
       features: [
         "IoT Solutions & Implementation",
         "Smart Automation Systems",
         "Tech-Powered Logistics",
-        "Integrated Service Platforms"
+        "Integrated Service Platforms",
       ],
-      gradient: "from-purple-500 to-pink-500"
-    }
+      gradient: "from-purple-500 to-pink-500",
+    },
   ];
 
   const specializations = [
     {
       icon: Brain,
       title: "Machine Learning & AI",
-      description: "Intelligent solutions that learn and adapt to your business needs.",
-      color: "text-orange-500"
+      description:
+        "Intelligent solutions that learn and adapt to your business needs.",
+      color: "text-orange-500",
     },
     {
       icon: Database,
       title: "Data Engineering",
-      description: "Robust data pipelines and analytics for informed decision-making.",
-      color: "text-blue-500"
+      description:
+        "Robust data pipelines and analytics for informed decision-making.",
+      color: "text-blue-500",
     },
     {
       icon: Smartphone,
       title: "Mobile-First Design",
-      description: "Responsive, intuitive applications optimized for all devices.",
-      color: "text-green-500"
+      description:
+        "Responsive, intuitive applications optimized for all devices.",
+      color: "text-green-500",
     },
     {
       icon: Cloud,
       title: "Cloud Solutions",
-      description: "Scalable, secure cloud infrastructure and deployment strategies.",
-      color: "text-purple-500"
+      description:
+        "Scalable, secure cloud infrastructure and deployment strategies.",
+      color: "text-purple-500",
     },
     {
       icon: Shield,
       title: "Security & Compliance",
-      description: "Enterprise-grade security measures and compliance protocols.",
-      color: "text-red-500"
+      description:
+        "Enterprise-grade security measures and compliance protocols.",
+      color: "text-red-500",
     },
     {
       icon: Cog,
       title: "System Integration",
-      description: "Seamless integration of various systems and third-party services.",
-      color: "text-indigo-500"
-    }
+      description:
+        "Seamless integration of various systems and third-party services.",
+      color: "text-indigo-500",
+    },
   ];
 
   const processSteps = [
     {
       step: "01",
       title: "Discovery & Planning",
-      description: "We analyze your needs, challenges, and goals to create a tailored solution strategy."
+      description:
+        "We analyze your needs, challenges, and goals to create a tailored solution strategy.",
     },
     {
-      step: "02", 
+      step: "02",
       title: "Design & Architecture",
-      description: "Our team designs scalable, efficient solutions with user experience at the forefront."
+      description:
+        "Our team designs scalable, efficient solutions with user experience at the forefront.",
     },
     {
       step: "03",
       title: "Development & Testing",
-      description: "Agile development with continuous testing ensures quality and reliability."
+      description:
+        "Agile development with continuous testing ensures quality and reliability.",
     },
     {
       step: "04",
       title: "Deployment & Support",
-      description: "Seamless deployment with ongoing support and maintenance for optimal performance."
-    }
+      description:
+        "Seamless deployment with ongoing support and maintenance for optimal performance.",
+    },
   ];
 
   return (
@@ -122,15 +136,19 @@ const Services = () => {
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="secondary" className="mb-6 bg-white/10 text-white border-white/20">
+          <Badge
+            variant="secondary"
+            className="mb-6 bg-white/10 text-white border-white/20"
+          >
             Technology Solutions & Services
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
             Our Services
           </h1>
           <p className="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            From software development to digital transformation, we deliver innovative 
-            solutions that drive business growth and technological excellence.
+            From software development to digital transformation, we deliver
+            innovative solutions that drive business growth and technological
+            excellence.
           </p>
         </div>
       </section>
@@ -143,8 +161,8 @@ const Services = () => {
               Core Service Offerings
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive technology solutions designed to meet your business needs 
-              and drive sustainable growth.
+              Comprehensive technology solutions designed to meet your business
+              needs and drive sustainable growth.
             </p>
           </div>
 
@@ -152,9 +170,14 @@ const Services = () => {
             {mainServices.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 border-0 bg-card/50 backdrop-blur-sm">
+                <Card
+                  key={index}
+                  className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 border-0 bg-card/50 backdrop-blur-sm"
+                >
                   <CardContent className="p-8">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-glow transition-all duration-300`}>
+                    <div
+                      className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-glow transition-all duration-300`}
+                    >
                       <Icon className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-foreground mb-4 text-center">
@@ -167,7 +190,9 @@ const Services = () => {
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-3">
                           <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{feature}</span>
+                          <span className="text-sm text-muted-foreground">
+                            {feature}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -187,8 +212,8 @@ const Services = () => {
               Technical Specializations
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Deep expertise across modern technologies and methodologies to deliver 
-              cutting-edge solutions.
+              Deep expertise across modern technologies and methodologies to
+              deliver cutting-edge solutions.
             </p>
           </div>
 
@@ -196,9 +221,14 @@ const Services = () => {
             {specializations.map((spec, index) => {
               const Icon = spec.icon;
               return (
-                <Card key={index} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 border-0 bg-card">
+                <Card
+                  key={index}
+                  className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 border-0 bg-card"
+                >
                   <CardContent className="p-6 text-center">
-                    <Icon className={`w-12 h-12 ${spec.color} mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`} />
+                    <Icon
+                      className={`w-12 h-12 ${spec.color} mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    />
                     <h3 className="text-lg font-semibold text-foreground mb-3">
                       {spec.title}
                     </h3>
@@ -221,7 +251,8 @@ const Services = () => {
               Our Development Process
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A proven methodology that ensures quality, transparency, and successful project delivery.
+              A proven methodology that ensures quality, transparency, and
+              successful project delivery.
             </p>
           </div>
 
@@ -252,24 +283,28 @@ const Services = () => {
           <div className="bg-gradient-accent rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-black/10 rounded-2xl"></div>
             <div className="relative">
-              <Badge variant="secondary" className="mb-6 bg-white/20 text-white border-white/30">
+              <Badge
+                variant="secondary"
+                className="mb-6 bg-white/20 text-white border-white/30"
+              >
                 Featured Service
               </Badge>
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                 LoomDash Logistics
               </h2>
               <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-                Experience our tech-enabled logistics service that combines innovation with reliability. 
-                LoomDash represents our commitment to real-world technology applications.
+                Experience our tech-enabled logistics service that combines
+                innovation with reliability. LoomDash represents our commitment
+                to real-world technology applications.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" className="text-lg px-8">
                   Explore LoomDash
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="text-white border-white/30 hover:bg-white/10 text-lg px-8"
                 >
                   Request Service
@@ -287,19 +322,22 @@ const Services = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Let's discuss how our services can help transform your business with innovative technology solutions.
+            Let's discuss how our services can help transform your business with
+            innovative technology solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="text-lg px-8">
               Get Started Today
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-white border-white/30 hover:bg-white/10 text-lg px-8"
-            >
-              Schedule Consultation
-            </Button>
+            <Link to="/schedule-consultation">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-white border-white/30 hover:bg-white/10 text-lg px-8"
+              >
+                Schedule Consultation
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
