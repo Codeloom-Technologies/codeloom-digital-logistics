@@ -88,53 +88,137 @@ const Index = () => {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <Badge variant="secondary" className="mb-4 bg-gradient-primary text-white border-0">
+              Founded 2023 • Est. September 13, 2022
+            </Badge>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-              Who We Are
+              About Codeloom Technologies
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Codeloom Technologies is a forward-thinking tech company dedicated to building 
-              innovative digital solutions that power businesses and everyday life.
+              A forward-thinking startup at the forefront of software development and machine learning, 
+              dedicated to crafting intricate and precise solutions for today's complex tech landscape.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-6">
-                Innovation at Our Core
-              </h3>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Our mission is to weave technology seamlessly into the way people live, work, 
-                and move — delivering products and services that are smart, efficient, and impactful.
-              </p>
-              <div className="space-y-4">
-                {[
-                  "Technology-driven solutions across multiple sectors",
-                  "Focus on innovation, reliability, and customer value",
-                  "Expertise in software development and digital transformation",
-                  "Real-world applications that make a difference"
-                ].map((point, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-muted-foreground">{point}</span>
-                  </div>
-                ))}
+          {/* Problem & Solution */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            <Card className="group hover:shadow-card transition-all duration-300 border-0 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center mb-6 group-hover:shadow-glow transition-all duration-300">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">The Challenge</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  In today's tech-driven landscape, businesses face the daunting challenge of navigating 
+                  a complex and rapidly evolving technological environment. The scarcity of tailor-made, 
+                  precise solutions that align with individual business needs hinders growth and innovation.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-card transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-6 group-hover:shadow-glow transition-all duration-300">
+                  <Zap className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">Our Solution</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  We address these challenges with cutting-edge software development and machine learning solutions. 
+                  Our team crafts intricate, custom-tailored technological solutions that empower businesses 
+                  to not only adapt but thrive in the digital landscape.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Vision & Mission */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-2xl p-8">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mb-6">
+                <Rocket className="w-8 h-8 text-white" />
               </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To be a leading innovator in software development and machine learning, empowering businesses 
+                with cutting-edge solutions that redefine possibilities and drive digital transformation.
+              </p>
             </div>
-            
-            <div className="grid grid-cols-2 gap-6">
-              {achievements.map((achievement, index) => (
-                <Card key={index} className="text-center hover:shadow-card transition-all duration-300 border-0 bg-muted/30">
-                  <CardContent className="p-6">
-                    <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
-                      {achievement.number}
+
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-2xl p-8">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6">
+                <Code className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To deliver unparalleled value by leveraging the latest technologies and a blend of coding 
+                expertise and creative craftsmanship, pushing the boundaries of innovation with tailored solutions.
+              </p>
+            </div>
+          </div>
+
+          {/* Values */}
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-foreground mb-8">Our Core Values</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+              {[
+                { 
+                  icon: "💡", 
+                  title: "Innovation", 
+                  description: "Embrace creativity and technological advancements",
+                  gradient: "from-yellow-400 to-orange-500"
+                },
+                { 
+                  icon: "🎯", 
+                  title: "Precision", 
+                  description: "Strive for excellence in every detail",
+                  gradient: "from-blue-400 to-blue-600"
+                },
+                { 
+                  icon: "🤝", 
+                  title: "Collaboration", 
+                  description: "Foster teamwork and diverse skills",
+                  gradient: "from-green-400 to-emerald-500"
+                },
+                { 
+                  icon: "❤️", 
+                  title: "Client-Centric", 
+                  description: "Prioritize satisfaction through understanding",
+                  gradient: "from-pink-400 to-rose-500"
+                },
+                { 
+                  icon: "📚", 
+                  title: "Learning", 
+                  description: "Cultivate growth and industry leadership",
+                  gradient: "from-purple-400 to-indigo-500"
+                }
+              ].map((value, index) => (
+                <Card key={index} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 border-0 bg-card/50 backdrop-blur-sm">
+                  <CardContent className="p-6 text-center">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${value.gradient} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-300 text-2xl`}>
+                      {value.icon}
                     </div>
-                    <div className="text-sm text-muted-foreground font-medium">
-                      {achievement.label}
-                    </div>
+                    <h4 className="font-semibold text-foreground mb-2">{value.title}</h4>
+                    <p className="text-sm text-muted-foreground">{value.description}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
+          </div>
+
+          {/* Achievements */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {achievements.map((achievement, index) => (
+              <Card key={index} className="text-center hover:shadow-card transition-all duration-300 border-0 bg-gradient-to-br from-primary/5 to-primary/10">
+                <CardContent className="p-6">
+                  <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
+                    {achievement.number}
+                  </div>
+                  <div className="text-sm text-muted-foreground font-medium">
+                    {achievement.label}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
