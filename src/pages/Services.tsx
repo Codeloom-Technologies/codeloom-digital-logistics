@@ -298,17 +298,25 @@ const Services = () => {
                 to real-world technology applications.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" className="text-lg px-8">
-                  Explore LoomDash
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-gradient-primary border-white/30 hover:bg-white/10 text-lg px-8"
-                >
-                  Request Service
-                </Button>
+                <Link to="/loomDash">
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="text-lg px-8"
+                  >
+                    Explore LoomDash
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link to="/request-service">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="text-gradient-primary border-white/30 hover:bg-white/10 text-lg px-8"
+                  >
+                    Request Service
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
