@@ -96,7 +96,7 @@ const Index = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-white border-white/30 hover:bg-white/10 text-lg px-8 w-full sm:w-auto"
+                  className="text-gradient-primary border-white/30 hover:bg-white/10 text-lg px-8 w-full sm:w-auto"
                 >
                   <Truck className="mr-2 w-5 h-5" />
                   Meet LoomDash
@@ -354,7 +354,7 @@ const Index = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-white border-white/30 hover:bg-white/10 text-lg px-8"
+                  className="text-gradient-primary border-white/30 hover:bg-white/10 text-lg px-8"
                 >
                   Request Service
                 </Button>
@@ -399,7 +399,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-white border-white/30 hover:bg-white/10 text-lg px-8"
+                className="text-gradient-primary border-white/30 hover:bg-white/10 text-lg px-8"
               >
                 Learn More
               </Button>

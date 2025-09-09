@@ -244,7 +244,7 @@ const LoomDash = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-white border-white/30 hover:bg-white/10 text-lg px-8"
+                className="text-gradient-primary border-white/30 hover:bg-white/10 text-lg px-8"
               >
                 Contact Us
               </Button>
