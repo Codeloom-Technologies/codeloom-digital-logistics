@@ -24,14 +24,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      info: "hello@codeloomtechn.com",
+      info: "codeloomtechnologies@gmail.com",
       description: "Send us an email and we'll respond within 24 hours",
       gradient: "from-blue-500 to-indigo-500",
     },
     {
       icon: Phone,
       title: "Call Us",
-      info: "+1 (555) 123-4567",
+      info: "+234 (9033) 440-507",
       description: "Speak directly with our team during business hours",
       gradient: "from-green-500 to-emerald-500",
     },
@@ -48,7 +48,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Head Office",
-      details: ["W117 Innovation Drive", "Tech District, Abuja", "Nigeria"],
+      details: ["We work remotely", "In, Abuja", "Nigeria"],
     },
     {
       icon: Clock,
@@ -217,6 +217,7 @@ const Contact = () => {
                   </div>
 
                   <Button
+                    disabled
                     type="submit"
                     className="w-full bg-gradient-primary hover:shadow-glow transition-all duration-300"
                   >

@@ -5,12 +5,12 @@ import {
   Code,
   Rocket,
   Shield,
-  Truck,
   ArrowRight,
   Brain,
   Smartphone,
   Globe,
   Zap,
+  Bike,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-codeloom.jpg";
@@ -50,7 +50,7 @@ const Index = () => {
   const achievements = [
     { number: "10+", label: "Projects Delivered" },
     { number: "25+", label: "Happy Clients" },
-    { number: "99%", label: "Client Satisfaction" },
+    { number: "99.9%", label: "Client Satisfaction" },
     { number: "24/7", label: "Support Available" },
   ];
 
@@ -98,7 +98,7 @@ const Index = () => {
                   variant="outline"
                   className="text-gradient-primary border-white/30 hover:bg-white/10 text-lg px-8 w-full sm:w-auto"
                 >
-                  <Truck className="mr-2 w-5 h-5" />
+                  <Bike className="mr-2 w-5 h-5" />
                   Meet LoomDash
                 </Button>
               </Link>
@@ -347,7 +347,7 @@ const Index = () => {
                     variant="secondary"
                     className="text-lg px-8"
                   >
-                    <Truck className="mr-2 w-5 h-5" />
+                    <Bike className="mr-2 w-5 h-5" />
                     Explore LoomDash
                   </Button>
                 </Link>
