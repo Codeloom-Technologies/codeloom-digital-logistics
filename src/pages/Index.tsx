@@ -10,7 +10,6 @@ import {
   Smartphone,
   Globe,
   Zap,
-  Bike,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-codeloom.jpg";
@@ -58,26 +57,27 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-hero">
-        <div className="absolute inset-0 bg-black/10"></div>
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <div className="max-w-4xl">
             <Badge
               variant="secondary"
-              className="mb-6 bg-white/10 text-white border-white/20"
+              className="mb-6 bg-white/10 text-white border-white/20 backdrop-blur-sm"
             >
               Innovative Digital Solutions
             </Badge>
-            <h1 className="text-4xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
               Codeloom
-              <span className="block text-2xl lg:text-3xl font-normal text-white/90 mt-2">
+              <span className="block text-2xl lg:text-3xl font-normal text-white/95 mt-2">
                 Technologies
               </span>
             </h1>
-            <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl">
+            <p className="text-xl lg:text-2xl text-white/95 mb-8 leading-relaxed max-w-3xl drop-shadow-md">
               We weave technology seamlessly into the way people live, work, and
               move — delivering products and services that are smart, efficient,
               and impactful.
@@ -92,14 +92,13 @@ const Index = () => {
                   Explore Solutions <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Link to="/loomdash">
+              <Link to="/contact">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-gradient-primary border-white/30 hover:bg-white/10 text-lg px-8 w-full sm:w-auto"
+                  className="text-white border-white/30 hover:bg-white/10 text-lg px-8 w-full sm:w-auto"
                 >
-                  <Bike className="mr-2 w-5 h-5" />
-                  Meet LoomDash
+                  Get In Touch
                 </Button>
               </Link>
             </div>
@@ -319,50 +318,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* LoomDash Highlight */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-accent rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-black/10 rounded-2xl"></div>
-            <div className="relative">
-              <Badge
-                variant="secondary"
-                className="mb-6 bg-white/20 text-white border-white/30"
-              >
-                Our Subsidiary Service
-              </Badge>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Meet LoomDash
-              </h2>
-              <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-                As part of our drive to merge tech with real-world needs, we
-                launched LoomDash, a dispatch and last-mile delivery service.
-                Powered by Codeloom's innovation, LoomDash brings speed,
-                reliability, and smart logistics to businesses and individuals.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/loomdash">
-                  <Button
-                    size="lg"
-                    variant="secondary"
-                    className="text-lg px-8"
-                  >
-                    <Bike className="mr-2 w-5 h-5" />
-                    Explore LoomDash
-                  </Button>
-                </Link>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-gradient-primary border-white/30 hover:bg-white/10 text-lg px-8"
-                >
-                  Request Service
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Vision Section */}
       <section className="py-16 lg:py-24 bg-muted/30">
