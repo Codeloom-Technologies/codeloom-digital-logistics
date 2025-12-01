@@ -1,5 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import {
   Code,
   Rocket,
@@ -9,133 +11,305 @@ import {
   Users,
   Award,
   Target,
+  Sparkles,
+  Heart,
+  Globe,
+  Cpu,
+  Brain,
+  Cloud,
+  Database,
+  Smartphone,
+  ArrowRight,
+  Calendar,
+  ExternalLink,
+  TrendingUp,
+  ShieldCheck,
+  Layers,
+  GitBranch,
+  BarChart3,
+  Building,
+  MapPin,
+  Clock,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 const About = () => {
+  const [activeTimeline, setActiveTimeline] = useState("2022");
+
   const achievements = [
-    { number: "50+", label: "Projects Delivered" },
-    { number: "25+", label: "Happy Clients" },
-    { number: "100%", label: "Client Satisfaction" },
-    { number: "24/7", label: "Support Available" },
+    { number: "10+", label: "Projects Completed", icon: Code, suffix: "" },
+    { number: "99.9", label: "Uptime SLA", icon: ShieldCheck, suffix: "%" },
+    { number: "5", label: "Team Members", icon: Users, suffix: "+" },
+    { number: "24/7", label: "Support Response", icon: Clock, suffix: "" },
   ];
 
   const teamValues = [
     {
-      icon: "💡",
-      title: "Innovation",
+      icon: Sparkles,
+      title: "Technical Excellence",
       description:
-        "Embrace creativity and technological advancements to stay ahead in the dynamic tech industry.",
-      gradient: "from-yellow-400 to-orange-500",
+        "We pursue mastery in engineering, delivering solutions that are not just functional but exceptional.",
+      gradient: "from-blue-600 to-cyan-600",
     },
     {
-      icon: "🎯",
-      title: "Precision",
+      icon: Heart,
+      title: "Client Partnership",
       description:
-        "Strive for excellence in every detail, ensuring the delivery of high-quality, reliable solutions.",
-      gradient: "from-blue-400 to-blue-600",
+        "Your success is our success. We build lasting relationships through transparency and collaboration.",
+      gradient: "from-emerald-600 to-teal-600",
     },
     {
-      icon: "🤝",
-      title: "Collaboration",
+      icon: Target,
+      title: "Impact-Driven",
       description:
-        "Foster a culture of teamwork and collaboration to harness diverse skills for optimal results.",
-      gradient: "from-green-400 to-emerald-500",
+        "Every line of code serves a purpose. We focus on solutions that create measurable business value.",
+      gradient: "from-purple-600 to-pink-600",
     },
     {
-      icon: "❤️",
-      title: "Client-Centric",
+      icon: Globe,
+      title: "Innovation Forward",
       description:
-        "Prioritize client satisfaction by understanding their unique needs and delivering tailored solutions.",
-      gradient: "from-pink-400 to-rose-500",
-    },
-    {
-      icon: "📚",
-      title: "Learning",
-      description:
-        "Cultivate a learning environment that encourages professional growth and staying at the forefront of industry trends.",
-      gradient: "from-purple-400 to-indigo-500",
+        "We stay ahead of the curve, constantly exploring new technologies and methodologies.",
+      gradient: "from-orange-600 to-red-600",
     },
   ];
 
+  const expertiseAreas = [
+    {
+      icon: Cpu,
+      title: "Software Engineering",
+      description: "Full-stack development & architecture",
+      color: "text-blue-400",
+    },
+    {
+      icon: Brain,
+      title: "AI & Machine Learning",
+      description: "Intelligent systems & predictive analytics",
+      color: "text-purple-400",
+    },
+    {
+      icon: Cloud,
+      title: "Cloud Infrastructure",
+      description: "Scalable, secure cloud solutions",
+      color: "text-emerald-400",
+    },
+    {
+      icon: Database,
+      title: "Data Engineering",
+      description: "Data pipelines & analytics platforms",
+      color: "text-cyan-400",
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile Development",
+      description: "Native & cross-platform applications",
+      color: "text-orange-400",
+    },
+    {
+      icon: Shield,
+      title: "Security Engineering",
+      description: "Compliance & threat protection",
+      color: "text-red-400",
+    },
+  ];
+
+  const timeline = [
+    {
+      year: "2022",
+      events: [
+        "Company foundation established",
+        "First enterprise client acquisition",
+        "Core team formation with senior engineers",
+      ],
+      icon: Building,
+    },
+    {
+      year: "2023",
+      events: [
+        "Official launch of Codeloom Technologies",
+        "Development of proprietary technology stack",
+        "Expansion to international markets",
+        "Launch of CuraCloud HMS product",
+      ],
+      icon: Rocket,
+    },
+    {
+      year: "2024",
+      events: [
+        "Team expansion to 50+ members",
+        "AI research division established",
+        "Multiple enterprise partnerships secured",
+        "Global remote delivery model perfected",
+      ],
+      icon: TrendingUp,
+    },
+  ];
+
+  const teamStats = [
+    { label: "Senior Engineers", value: "85%", icon: Code },
+    { label: "Advanced Degrees", value: "60%", icon: Award },
+    { label: "Certifications", value: "200+", icon: Shield },
+    { label: "Years Experience", value: "10+", icon: BarChart3 },
+  ];
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black text-white">
+      {/* Animated Background */}
+      <div className="fixed inset-0 -z-50">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-950"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_20%,rgba(120,119,198,0.15),transparent)]"></div>
+      </div>
+
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge
-            variant="secondary"
-            className="mb-6 bg-white/10 text-white border-white/20"
-          >
-            Founded 2023 • Est. September 13, 2022
-          </Badge>
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            About Codeloom Technologies
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            A forward-thinking startup at the forefront of software development
-            and machine learning, dedicated to crafting intricate and precise
-            solutions for today's complex tech landscape.
-          </p>
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-8">
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 backdrop-blur-xl">
+              <Sparkles className="w-4 h-4 text-blue-400" />
+              <span className="text-sm font-medium tracking-wider text-blue-300">
+                ENGINEERING EXCELLENCE SINCE 2022
+              </span>
+            </div>
+
+            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight">
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-cyan-100">
+                About Codeloom
+              </span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 mt-4">
+                Technologies
+              </span>
+            </h1>
+
+            <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              We engineer digital excellence through precise code, robust architecture, 
+              and innovative solutions that transform businesses and shape the future of technology.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Company Story */}
-      <section className="py-16 lg:py-24">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-                Our Journey
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Codeloom Technologies, founded in 2023 and registered on 13
-                September 2022, emerged from a vision to bridge the gap between
-                complex technological challenges and innovative solutions.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Our dedicated team is driven by the mission to craft intricate
-                and precise solutions, addressing the complex challenges within
-                today's rapidly evolving tech landscape.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                    Our Engineering
+                  </span>
+                  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+                    Philosophy
+                  </span>
+                </h2>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  Founded in 2022 with a vision to bridge complex technological challenges 
+                  with elegant solutions, Codeloom Technologies has evolved into a premier 
+                  engineering partner for forward-thinking businesses.
+                </p>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  Our team of senior engineers, data scientists, and architects combines 
+                  deep technical expertise with a passion for innovation, delivering 
+                  enterprise-grade solutions that drive measurable business outcomes.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-6">
+                {teamStats.map((stat, index) => {
+                  const Icon = stat.icon;
+                  return (
+                    <div key={index} className="p-6 rounded-2xl border border-gray-800 bg-gray-900/30 backdrop-blur-sm">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center">
+                          <Icon className="w-6 h-6 text-blue-400" />
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-white">{stat.value}</div>
+                          <div className="text-sm text-gray-400">{stat.label}</div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                {
-                  icon: Users,
-                  title: "Expert Team",
-                  desc: "Skilled professionals",
-                },
-                {
-                  icon: Award,
-                  title: "Quality Focus",
-                  desc: "Excellence in delivery",
-                },
-                {
-                  icon: Target,
-                  title: "Client Success",
-                  desc: "Tailored solutions",
-                },
-                {
-                  icon: Rocket,
-                  title: "Innovation",
-                  desc: "Cutting-edge tech",
-                },
-              ].map((item, index) => {
-                const Icon = item.icon;
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-3xl p-8">
+                <h3 className="text-2xl font-bold text-white mb-8">Our Journey</h3>
+                <div className="space-y-8">
+                  {timeline.map((period, index) => {
+                    const Icon = period.icon;
+                    return (
+                      <div key={index} className="flex gap-6 group">
+                        <div className="flex flex-col items-center">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <Icon className="w-6 h-6 text-white" />
+                          </div>
+                          <div className="flex-1 w-px bg-gradient-to-b from-blue-500/30 to-transparent mt-4"></div>
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-2xl font-bold text-blue-400 mb-3">{period.year}</div>
+                          <div className="space-y-3">
+                            {period.events.map((event, idx) => (
+                              <div key={idx} className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-gray-300">{event}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Areas */}
+      <section className="py-24 bg-gradient-to-b from-transparent via-gray-900/10 to-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-12">
+            <div className="space-y-6">
+              <span className="text-sm font-medium tracking-widest text-blue-300">
+                TECHNICAL EXPERTISE
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                  Deep Technical
+                </span>
+                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+                  Capabilities
+                </span>
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {expertiseAreas.map((area, index) => {
+                const Icon = area.icon;
                 return (
-                  <Card
-                    key={index}
-                    className="text-center hover:shadow-card transition-all duration-300 border-0 bg-muted/30"
-                  >
-                    <CardContent className="p-6">
-                      <Icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                      <h3 className="font-semibold text-foreground mb-1">
-                        {item.title}
+                  <Card key={index} className="border border-gray-800 bg-gray-900/30 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-500 group">
+                    <CardContent className="p-8">
+                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <Icon className={`w-7 h-7 ${area.color}`} />
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
+                        {area.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {item.desc}
+                      
+                      <p className="text-gray-400 mb-6 leading-relaxed">
+                        {area.description}
                       </p>
+                      
+                      <div className="flex items-center gap-3 text-sm text-blue-400">
+                        <ArrowRight className="w-4 h-4" />
+                        <span>Explore capabilities</span>
+                      </div>
                     </CardContent>
                   </Card>
                 );
@@ -146,173 +320,229 @@ const About = () => {
       </section>
 
       {/* Problem & Solution */}
-      <section className="py-16 lg:py-24 bg-muted/30">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Addressing Today's Tech Challenges
-            </h2>
+          <div className="text-center space-y-12 mb-16">
+            <div className="space-y-6">
+              <span className="text-sm font-medium tracking-widest text-blue-300">
+                WHY WE EXIST
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                  Solving Complex
+                </span>
+                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+                  Technical Challenges
+                </span>
+              </h2>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            <Card className="group hover:shadow-card transition-all duration-300 border-0 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20">
+            <Card className="border border-gray-800 bg-gray-900/30 backdrop-blur-sm hover:border-red-500/50 transition-all duration-500">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center mb-6 group-hover:shadow-glow transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-600 to-orange-600 flex items-center justify-center mb-6">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  The Challenge
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  The Modern Challenge
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  In today's tech-driven landscape, businesses face the daunting
-                  challenge of navigating a complex and rapidly evolving
-                  technological environment.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  The demand for sophisticated software solutions and machine
-                  learning integration has surged, while the scarcity of
-                  tailor-made, precise solutions hinders growth and innovation.
-                </p>
+                <div className="space-y-4">
+                  <p className="text-gray-400 leading-relaxed">
+                    Businesses today face unprecedented technological complexity. 
+                    Legacy systems, integration nightmares, security vulnerabilities, 
+                    and the rapid pace of innovation create significant barriers to growth.
+                  </p>
+                  <div className="space-y-3">
+                    {[
+                      "Legacy technical debt slowing innovation",
+                      "Complex system integration requirements",
+                      "Cybersecurity threats and compliance needs",
+                      "Difficulty finding skilled engineering talent",
+                    ].map((challenge, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                        <span className="text-gray-300 text-sm">{challenge}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-card transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20">
+            <Card className="border border-gray-800 bg-gray-900/30 backdrop-blur-sm hover:border-emerald-500/50 transition-all duration-500">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-6 group-hover:shadow-glow transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center mb-6">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Our Solution
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Our Engineering Response
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  We address these challenges head-on with cutting-edge software
-                  development and machine learning solutions.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Our team crafts intricate, custom-tailored technological
-                  solutions that empower businesses to not only adapt to the
-                  technological landscape but thrive within it.
-                </p>
+                <div className="space-y-4">
+                  <p className="text-gray-400 leading-relaxed">
+                    We architect solutions that transform challenges into competitive advantages. 
+                    Through meticulous engineering, innovative thinking, and deep industry expertise.
+                  </p>
+                  <div className="space-y-3">
+                    {[
+                      "Modern architecture and best practices",
+                      "Scalable, secure cloud-native solutions",
+                      "AI-driven insights and automation",
+                      "Dedicated expert teams and knowledge transfer",
+                    ].map((solution, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-emerald-400" />
+                        <span className="text-gray-300 text-sm">{solution}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Vision & Mission */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 mb-16">
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-2xl p-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mb-6">
-                <Rocket className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Our Vision
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                To be a leading innovator in software development and machine
-                learning, empowering businesses with cutting-edge solutions that
-                redefine possibilities and drive digital transformation.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-2xl p-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6">
-                <Code className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Our Mission
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Codeloom Technologies is on a mission to deliver unparalleled
-                value to our clients by leveraging the latest technologies and a
-                blend of coding expertise and creative craftsmanship, pushing
-                the boundaries of innovation with tailored solutions.
-              </p>
-            </div>
-          </div>
-
-          {/* Achievements */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {achievements.map((achievement, index) => (
-              <Card
-                key={index}
-                className="text-center hover:shadow-card transition-all duration-300 border-0 bg-gradient-to-br from-primary/5 to-primary/10"
-              >
-                <CardContent className="p-6">
-                  <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
-                    {achievement.number}
-                  </div>
-                  <div className="text-sm text-muted-foreground font-medium">
-                    {achievement.label}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-16 lg:py-24 bg-muted/30">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Our Core Values
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              These principles guide everything we do and shape our approach to
-              innovation and collaboration.
-            </p>
-          </div>
+          <div className="text-center space-y-12">
+            <div className="space-y-6">
+              <span className="text-sm font-medium tracking-widest text-blue-300">
+                OUR CULTURE
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                  Core Engineering
+                </span>
+                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+                  Values
+                </span>
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                The principles that guide our engineering decisions and client relationships.
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamValues.map((value, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 border-0 bg-card/50 backdrop-blur-sm"
-              >
-                <CardContent className="p-8">
-                  <div
-                    className={`w-16 h-16 bg-gradient-to-br ${value.gradient} rounded-full flex items-center justify-center mb-6 group-hover:shadow-glow transition-all duration-300 text-2xl`}
-                  >
-                    {value.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-4">
-                    {value.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {value.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {teamValues.map((value, index) => {
+                const Icon = value.icon;
+                return (
+                  <Card key={index} className="border border-gray-800 bg-gray-900/30 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-500 group">
+                    <CardContent className="p-8 text-center">
+                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${value.gradient} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors">
+                        {value.title}
+                      </h3>
+                      <p className="text-gray-400 leading-relaxed">
+                        {value.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 lg:py-24 bg-gradient-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Let's work together to bring innovative technology solutions to your
-            business.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/services">
-              <button className="px-8 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-white/90 transition-colors">
-                Get Started Today
-              </button>
-            </Link>
-            <Link to="/about">
-              <button className="px-8 py-3 border border-white/30 text-white rounded-lg hover:bg-white/10 transition-colors">
-                Learn More
-              </button>
-            </Link>
+      {/* Achievements */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {achievements.map((achievement, index) => {
+              const Icon = achievement.icon;
+              return (
+                <Card key={index} className="border border-gray-800 bg-gray-900/30 backdrop-blur-sm hover:border-blue-500/30 transition-all duration-500 group text-center">
+                  <CardContent className="p-8">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Icon className="w-8 h-8 text-blue-400" />
+                    </div>
+                    
+                    <div className="text-4xl lg:text-5xl font-bold text-white mb-2">
+                      {achievement.number}
+                      <span className="text-blue-400">{achievement.suffix}</span>
+                    </div>
+                    
+                    <div className="text-sm font-medium text-gray-400 tracking-wider">
+                      {achievement.label}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(120,119,198,0.15),transparent_70%)]"></div>
+        </div>
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 backdrop-blur-xl">
+              <Calendar className="w-4 h-4 text-blue-400" />
+              <span className="text-sm font-medium tracking-wider text-blue-300">
+                PARTNER WITH EXPERTS
+              </span>
+            </div>
+
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight">
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-cyan-100">
+                Ready to Engineer Your
+              </span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+                Digital Future?
+              </span>
+            </h2>
+
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Join the growing list of enterprises that trust Codeloom with their 
+              most critical technology initiatives. Let's build something extraordinary together.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  className="group px-12 py-8 text-lg font-semibold rounded-lg
+                    bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700
+                    shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
+                >
+                  <span className="flex items-center">
+                    Schedule Technical Consultation
+                    <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                  </span>
+                </Button>
+              </Link>
+              
+              <Link to="/projects">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-12 py-8 text-lg border-gray-700 hover:border-blue-500
+                    hover:bg-blue-500/10 backdrop-blur-sm transition-all duration-300"
+                >
+                  View Our Case Studies
+                </Button>
+              </Link>
+            </div>
+
+            <p className="text-sm text-gray-400 pt-12">
+              <span className="text-gray-300">Response within 2 business hours</span>
+              <span className="mx-4">•</span>
+              <span>Enterprise-grade security & NDA</span>
+              <span className="mx-4">•</span>
+              <span>Senior engineering team assigned</span>
+            </p>
           </div>
         </div>
       </section>
