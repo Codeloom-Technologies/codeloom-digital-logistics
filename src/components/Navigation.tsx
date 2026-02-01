@@ -52,12 +52,12 @@ const Navigation = () => {
       ]
     },
     { 
-      name: "Projects", 
+      name: "Portfolio", 
       path: "/projects",
       dropdown: [
         { name: "Case Studies", path: "/projects" },
-        { name: "Success Stories", path: "/projects#stories" },
         { name: "Our Process", path: "/projects#process" },
+        { name: "Technical Capabilities", path: "/capabilities" },
       ]
     },
     { 
