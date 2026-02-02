@@ -44,14 +44,6 @@ const Navigation = () => {
       ]
     },
     { 
-      name: "Products", 
-      path: "/products",
-      dropdown: [
-        { name: "CuraCloud HMS", path: "/products/curacloud", badge: "Healthcare" },
-        { name: "LoomDash Logistics", path: "/products/loomdash", badge: "Logistics" },
-      ]
-    },
-    { 
       name: "Portfolio", 
       path: "/projects",
       dropdown: [
@@ -180,9 +172,9 @@ const Navigation = () => {
                                   {dropdownItem.name}
                                 </span>
                               </div>
-                              {dropdownItem.badge && (
+                              {'badge' in dropdownItem && (dropdownItem as { badge?: string }).badge && (
                                 <span className="px-2 py-1 text-xs rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300">
-                                  {dropdownItem.badge}
+                                  {(dropdownItem as { badge?: string }).badge}
                                 </span>
                               )}
                             </Link>
@@ -315,9 +307,9 @@ const Navigation = () => {
                                 <span className="text-gray-300 hover:text-white">
                                   {dropdownItem.name}
                                 </span>
-                                {dropdownItem.badge && (
+                                {'badge' in dropdownItem && (dropdownItem as { badge?: string }).badge && (
                                   <span className="px-2 py-1 text-xs rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300">
-                                    {dropdownItem.badge}
+                                    {(dropdownItem as { badge?: string }).badge}
                                   </span>
                                 )}
                               </Link>
